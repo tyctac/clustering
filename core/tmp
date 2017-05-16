@@ -253,8 +253,8 @@ namespace DataStructure
         {
             len = Length + Length-k;
             this.linkNum = new int[len, len];
-            this.setN = new int[len];
-            this.sets = new int[len];
+            this.setN = new int[len];  ## setN[i] = j 表示 簇i的邻居有j个
+            this.sets = new int[len]; ## sets[i] = j 表示 簇i合并后属于簇j
             for (int i = 0; i < len; i++)
             {
                 setN[i] = 1;

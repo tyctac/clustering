@@ -1,17 +1,5 @@
-# encoding=utf8
+#encoding=utf-8
 from core.rock_clustering.heap_oper import my_heap
-class rock_type:
-    def __init__(self,id,gkey):
-        self.id = id
-        self.gkey = gkey
-
-    def compare_func(self,):
-        '''
-        先不管比较函数，实现堆的时候再说
-        :return:
-        '''
-        pass
-
 class rock_queue:
     '''
     堆的实现，包括global_heap 和local_heap
@@ -35,7 +23,34 @@ class rock_queue:
 
     def delete(self,id):
         '''
-
+        根据rock_type的id对堆中相应元素进行删除
         :param id:
         :return:
         '''
+        if self.rt[id] != None:
+            return False ## 堆中没有该对象
+        flag = self.rkheap.delete_by_attr(id,'id')
+        if flag:
+            self.count = self.count -1
+            self.rt[id] = None
+        return flag
+
+    def insert(self,rkty):
+        '''
+
+        :param rkty:
+        :return:
+        '''
+        if self.rt[rkty.id] != None:
+            return False
+        
+
+
+    def update(self,id,gkey):
+        '''
+
+        :param id:
+        :param gkey:
+        :return:
+        '''
+        pass
