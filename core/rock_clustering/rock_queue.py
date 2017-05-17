@@ -2,7 +2,7 @@
 from core.rock_clustering.heap_oper import my_heap
 class rock_queue:
     '''
-    堆的实现，包括global_heap 和local_heap
+    堆的实现，包括global_heap 和local_heap,
     '''
     def __init__(self,rt,id,count=0,rk_heap=my_heap(key=lambda x:-x.gkey)): ## todo
         # 有默认值的参数要放在最后面
