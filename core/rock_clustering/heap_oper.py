@@ -37,6 +37,16 @@ class my_heap:
         else:
             return None
 
+    def peek_top(self):
+        '''
+        peek max in the heap
+        :return:
+        '''
+        if(len(self._data) > 1):
+            return self._data[0][1]
+        else:
+            return None
+
     def delete(self,index):
         '''
         以对象id为目标在堆中删除对象，我的方法是以id找到该对象的索引，将堆中最后一个元素放到该位置，
