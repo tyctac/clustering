@@ -43,7 +43,7 @@ class rock_queue:
         '''
         if self.rt[rkty.id] != None:
             return False
-        
+
 
 
     def update(self,id,gkey):
