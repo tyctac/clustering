@@ -6,7 +6,6 @@ using System.Collections;
 namespace DataStructure
 {
 
-
     // RockType
     //  NewtonTreeNode<RockType> 该树节点以RockType为范型模板生成
     //
@@ -159,7 +158,7 @@ namespace DataStructure
         }
         public static RockQueue build_local_heap(LINK link, int s)
         {
-            RockQueue qs = new RockQueue(link.setN.Length); // link.setN到底是什么东西？？
+            RockQueue qs = new RockQueue(link.setN.Length); // link.setN[i] 表示与簇i响铃的簇有多少
             for (int i = 0; i < link.len; i++)
             {
                 if(i==s) continue;
@@ -288,7 +287,7 @@ namespace DataStructure
                 {
                     link.linkNum[x, w] = link.linkNum[x, u] + link.linkNum[x, v];
                     RockFunc.delete(q[x], u); RockFunc.delete(q[x], v);
-                    RockFunc.insert(q[x],w,RockFunc.gFunc(x,w,link));
+                    RockFunc.insert(q[x],w,RockFunc.gFunc(x,w,link)); // 如果x == w 没必要插入到w的堆中去
                     if(Q.rt[x]!=null) RockFunc.insert(q[w],x,RockFunc.gFunc(x,w,link));
               RockFunc.update(Q,x,q[x]);
                 }

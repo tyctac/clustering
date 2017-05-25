@@ -55,8 +55,12 @@ class my_heap:
         复杂度为Ｏ(logn)
         :return:
         '''
+        if len(self._data)-1 == index:
+            self._data.pop()
+            return True
         self._data[index] = self._data[-1]
         self._data.pop()
+        # print 'heap size is ',len(self._data), ' index ',index
         heapq._siftup(self._data,index) ##　TODO
         heapq._siftdown(self._data,0,index) ## TODO 可能会有问题　————没有问题
         return True
@@ -84,7 +88,7 @@ class my_heap:
         if hpsize == 0:
             return -1
         for i in range(hpsize):
-            v = getattr(self._data[1],attr)
+            v = getattr(self._data[i][1],attr)
             if val == v:
                 return i
         return -1

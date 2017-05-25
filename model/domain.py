@@ -3,6 +3,7 @@ class domain():
         self.name = name
         self.reg_person = regist_person
         self.reg_date = regist_date
+    ##需要将域名信息存入mongodb
 
     def initial(self):
         pass

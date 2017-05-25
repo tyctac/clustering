@@ -1,5 +1,4 @@
 # encoding=utf8
-# from core.rock_clustering.heap_oper import my_heap
 class rock_type:
     def __init__(self,id,gkey):
         self.id = id
